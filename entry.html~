@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+{% block container %}
+{% load comments %}
+		 <h2>{{entry.title}}</h2>
+			{{entry.summary}}
+		<p>The proof <a href='{{entry.link}}'>{{entry.link}}</a></p>
+		<p>Sumitted by {{entry.user.username}}</p>
+		<p>Judgment day {{entry.judgementDay.day}}/{{entry.judgementDay.month}}/{{entry.judgementDay.year}}</p>
+		{% if user.is_authenticated %}		
+			{% if verdict %}
+				<p>Your vote has been registered</p>
+			{% else %}
+				<p>Vote <a href="/bookmark/{{entry.id}}/vote/3/">Bang on</a> 
+				<a href="/bookmark/{{entry.id}}/vote/1/">Dead wrong</a> 
+		 		<a href="/bookmark/{{entry.id}}/vote/2/">Meh..</a>
+			{% endif %}
+		{% render_comment_form for entry %}
+		{% else %}
+		<p>You must be logged in to vote</p>
+		{% endif %}
+
+
+{% endblock %}

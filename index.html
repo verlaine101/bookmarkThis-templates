@@ -1,0 +1,9 @@
+{% extends "base.html" %}
+{% block container %}
+	{% if recentBookmarks %}
+		{% for entry in recentBookmarks %}
+		 <a href='/bookmark/{{entry.id}}'>{{entry.title}}</a>
+		
+		{% endfor %} 
+	{% endif %}
+{% endblock %}

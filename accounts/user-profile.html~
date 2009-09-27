@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+
+{% block container %}
+
+
+<form method="post" action="">
+{{ UserProfileForm.as_p }}
+
+<input type="submit" value="submit" />
+</form>
+
+{% endblock %}

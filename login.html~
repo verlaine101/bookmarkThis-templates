@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+{% block container %}
+		{% if user.is_authenticated %}
+			<a href="/logout/">log out</a>, {{user.username}}
+		{% else %}
+	<form id='login'  name='login' action='/login/' method='post'>
+		<label for='username'>Username</label><input id='username' name='username' type='text' size="8" />
+		<label for='password'>Password</label><input id='password' name='password' type='text' size="8" />
+		<input id='submit' name='submit' type='submit' value='login' />
+	</form>
+		{% endif %}
+{% endblock %}

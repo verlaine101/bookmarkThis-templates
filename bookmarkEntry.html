@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+{% block container %}
+<script type="text/javascript">
+          jQuery(function() {
+               jQuery("#id_judgementDay").datepicker({ dateFormat: 'yy/dd/mm' });
+            });
+	</script>
+
+<form id='bookmarkEntry' action='' method='post'>
+{{entryForm.as_p}}
+<input name='submit' type='submit' value='submit' />
+</form>
+{% endblock %}
